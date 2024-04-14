@@ -13,21 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -48,39 +33,46 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage("assets/images/barber2.png"),
-            fit: BoxFit.fitWidth),
-      ),
-      child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-        Container(
-          height: 120,
-          margin: EdgeInsets.only(bottom: 40),
-          decoration: BoxDecoration(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 50),
+            height: 500,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/barber2.png"),
+                  fit: BoxFit.fitWidth),
+            ),
+          ),
+          Container(
+            height: 120,
+            // margin: EdgeInsets.only(bottom: 40),
+            decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/images/barbertitle.png"),
-                  fit: BoxFit.cover)),
-        ),
-        Container(
-          padding: EdgeInsets.all(16),
-          width: MediaQuery.of(context).size.width,
-          child: ElevatedButton.icon(
-            onPressed: () {},
-            icon: Icon(
-              Icons.phone,
-              color: Colors.white,
+                  fit: BoxFit.cover),
             ),
-            label: Text(
-              "Log in with PHONE",
-              style: TextStyle(color: Colors.white),
-            ),
-            style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.black)),
           ),
-        )
-      ]),
-    ));
+          Container(
+            padding: EdgeInsets.all(16),
+            width: MediaQuery.of(context).size.width,
+            child: ElevatedButton.icon(
+              onPressed: () {},
+              icon: Icon(
+                Icons.phone,
+                color: Colors.white,
+              ),
+              label: Text(
+                "Log in with PHONE",
+                style: TextStyle(color: Colors.white),
+              ),
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.black)),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
