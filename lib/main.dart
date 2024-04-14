@@ -51,11 +51,34 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("assets/images/barber2.png"), fit: BoxFit.cover),
+            image: AssetImage("assets/images/barber2.png"),
+            fit: BoxFit.fitWidth),
       ),
-      child: Column(children: [
-        Center(
-          child: Text("Ok"),
+      child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+        Container(
+          height: 120,
+          margin: EdgeInsets.only(bottom: 40),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/barbertitle.png"),
+                  fit: BoxFit.cover)),
+        ),
+        Container(
+          padding: EdgeInsets.all(16),
+          width: MediaQuery.of(context).size.width,
+          child: ElevatedButton.icon(
+            onPressed: () {},
+            icon: Icon(
+              Icons.phone,
+              color: Colors.white,
+            ),
+            label: Text(
+              "Log in with PHONE",
+              style: TextStyle(color: Colors.white),
+            ),
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.black)),
+          ),
         )
       ]),
     ));
